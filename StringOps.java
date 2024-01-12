@@ -125,7 +125,7 @@ public class StringOps {
             }
         }
         int arrayIndex = 0;
-        String str = "output: [";
+        String str = "[";
         int[] arr = new int[arraySize];
         for(int j = 0; j < string.length(); j++){
             if (string.charAt(j) == chr) {
