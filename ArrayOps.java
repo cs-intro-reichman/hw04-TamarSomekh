@@ -1,6 +1,6 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        System.out.println(findMissingInt(new int[] {0, 1, 2, 3, 4, 6}));
+        System.out.println(findMissingInt(new int[] {2,3,1}));
         System.out.println(secondMaxValue(new int[] {6, 9, 4, 7, 3, 4}));
         System.out.println(containsTheSameElements(new int[] {2, 2, 3, 7, 8, 3, 2}, new int[] {8, 2, 7, 7, 3}));
         System.out.println(isSorted(new int[] {1, -2, 3}));
@@ -8,12 +8,14 @@ public class ArrayOps {
     
     public static int findMissingInt (int [] array) {
         int missing = 0;
-        int min = minVal(array);
-        int max = maxVal(array);
-        double bigSum = ((double)(array.length + 1) / 2 ) * (min + max);
+        int bigSum = 0;
+        for(int i = 0; i <= array.length; i++){
+            bigSum = bigSum +i;
+        }
+        
         int sum = sum(array);
-        missing = (int) bigSum - sum;
-
+        
+        missing = bigSum - sum;
         return missing;
     }
 
