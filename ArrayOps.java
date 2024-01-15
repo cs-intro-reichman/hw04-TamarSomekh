@@ -1,7 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
         System.out.println(findMissingInt(new int[] {2,3,1}));
-        System.out.println(secondMaxValue(new int[] {6, 9, 4, 7, 3, 4}));
+        System.out.println(secondMaxValue(new int[] {2,8,3,7,8}));
         System.out.println(containsTheSameElements(new int[] {2, 2, 3, 7, 8, 3, 2}, new int[] {8, 2, 7, 7, 3}));
         System.out.println(isSorted(new int[] {1, -2, 3}));
     }
@@ -26,16 +26,24 @@ public class ArrayOps {
         //removing the max value from array
         int[] newArr = new int[array.length - 1];
         int index = 0;
+        int maxCount = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] != max){
                 newArr[index] = array[i];
                 index++;
+            }else{
+               maxCount++;
             }
         }
 
         //finding the second max value
-        int secondMax = maxVal(newArr);
-
+        int secondMax;
+        if (maxCount != 1) {
+            secondMax = max;
+        }else{
+            secondMax = maxVal(newArr);
+        }
+    
         return secondMax;
     }
 
